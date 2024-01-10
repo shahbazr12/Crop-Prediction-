@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Data</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            animation: gradientAnimation 10s infinite alternate;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background: linear-gradient(45deg, #4CAF50, #556270);
+            }
+            100% {
+                background: linear-gradient(45deg, #556270, #4CAF50);
+            }
+        }
+
+        .container {
+            text-align: center;
+            padding: 100px;
+            color: #fff;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            color: #fff;
+        }
+
+        table, th, td {
+            border: 1px solid #fff;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #333;
+        }
+
+        tr:nth-child(even) {
+            background-color: #444;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Show Data</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nitrogen</th>
+                    <th>Phosphorous</th>
+                    <th>Potassium</th>
+                    <th>Temperature</th>
+                    <th>Humidity</th>
+                    <th>pH</th>
+                    <th>Rainfall</th>
+                    <th>Result</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in data %}
+                    <tr>
+                        <td>{{ item.nitrogen }}</td>
+                        <td>{{ item.phosphorous }}</td>
+                        <td>{{ item.potassium }}</td>
+                        <td>{{ item.temperature }}</td>
+                        <td>{{ item.humidity }}</td>
+                        <td>{{ item.ph }}</td>
+                        <td>{{ item.rainfall }}</td>
+                        <td>{{ item.result }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
